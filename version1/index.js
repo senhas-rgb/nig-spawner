@@ -9,6 +9,7 @@ const effect1 = document.getElementById('vine-boom');
 const music1 = document.getElementById('music1');
 const button1 = document.getElementById('button1');
 const board = document.getElementById('board');
+const hogRider = "https://c.tenor.com/Yy7am2uWXw0AAAAd/tenor.gif";
 
 let counter = 20;
 
@@ -33,6 +34,10 @@ function submit()
         music1.pause();
     } else if (userInput.value === "cheatsheet") {
         board.innerHTML = "reset - reloads the page<br>stop the music - stops the background music <br> nigger/niger/sajana - summons niggers";
+    } else if (userInput.value === "hog rider") {
+        music1.pause();
+        imagePlace.style.display = "inline";
+        imagePlace.src = hogRider;
     } else {
         alert("wrong, try again");
     }
