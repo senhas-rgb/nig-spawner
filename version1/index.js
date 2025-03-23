@@ -7,39 +7,80 @@ const imagePlace = document.getElementById('image1');
 const niggers = "https://cdn.discordapp.com/attachments/1335846784903286859/1353443574427025549/e060ac4a-f759-49ae-bd36-f18b5f7e82a0.png?ex=67e1ac0d&is=67e05a8d&hm=b40f2e92d2ed7aa0bf9a934883dd01570cd60b48a45cf4cfcda92acfc8f64170&";
 const effect1 = document.getElementById('vine-boom');
 const music1 = document.getElementById('music1');
-const button1 = document.getElementById('button1');
 const board = document.getElementById('board');
 const hogRider = "https://c.tenor.com/Yy7am2uWXw0AAAAd/tenor.gif";
 
-let counter = 20;
-
-function submit()
-{
-    if (counter === 20 && userInput.value !== '')
-    {
+const commands = {
+    'nigger': () => {
         music1.play();
-    }
-    if (userInput.value === "nigger" || userInput.value === "niger" || userInput.value === "sajana") {
         effect1.play();
         label1.textContent = "SUCCESS";
         imagePlace.style.display = "inline";
         imagePlace.src = niggers;
         imagePlace.height = counter;
         counter = counter + 50;
-
-    } else if (userInput.value === "reset")
-    {
+    },
+    'reset': () => {
         location.reload();
-    } else if (userInput.value === "stop the music") {
-        music1.pause();
-    } else if (userInput.value === "cheatsheet") {
-        board.innerHTML = "reset - reloads the page<br>stop the music - stops the background music <br> nigger/niger/sajana - summons niggers";
-    } else if (userInput.value === "hog rider") {
+    },
+    'stop the music': () => {
+      music1.pause();
+    },
+    'cheatsheet': () => {
+        board.innerText = "ALL commands:\n" +
+            "nigger/niggers/sajana : Summons niggers\n" +
+            "reset/refresh/reload : reloads the page\n" +
+            "stop the music : stops the music from playing\n" +
+            "cheatsheet/cheat/sheet/codes/commands/help : Displays the cheatsheet(this)\n" +
+            "hog rider/hoggy : Summons a hog rider\n" +
+            "diddy/oil : Summons diddy\n";
+        setTimeout(() => {
+            board.innerHTML = "";
+        }, 5000);
+    },
+    'hog rider': () => {
         music1.pause();
         imagePlace.style.display = "inline";
+        imagePlace.height = 600;
         imagePlace.src = hogRider;
+    },
+    'diddy': () => {
+        music1.pause();
+        imagePlace.style.display = "inline";
+        imagePlace.height = 600;
+        imagePlace.src = diddy;
+    }
+}
+const alternatives = {
+    "niggers": "nigger",
+    "sajana": "nigger", // command 1 fin
+    "reload": "reset",
+    "refresh": "reset", // command 2 fin
+    // command 3 fin
+    "cheat": "cheatsheet",
+    "sheet": "cheatsheet",
+    "codes": "cheatsheet",
+    "commands": "cheatsheet",
+    "help": "cheatsheet", // command 4 fin
+    "hoggy": "hog rider", // command 5 fin
+    "oil": "diddy", // command 6 fin
+};
+
+let counter = 50;
+
+function submit()
+{
+
+    if (counter >= 200)
+    {
+        counter = counter - 100;
+    }
+    const actionKey = alternatives[userInput.value] || userInput.value;
+
+    if (commands[actionKey]) {
+        commands[actionKey]();
     } else {
-        alert("wrong, try again");
+        alert("Error try again?");
     }
 }
 
