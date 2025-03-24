@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+    transition: 1s;
+}
+
+.canvas {
+    width: 500px;  /* Set the width */
+    height: 500px; /* Set the height */
+    border: 5px solid black; /* Border to mimic a canvas frame */
+    background-color: white; /* Background color */
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow */
+
+}
+
+body {
+    background-color: #1e1e2e;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button Styling */
+button {
+    background: mediumpurple;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.8s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: scale(1.05);
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+}
+
+/* Text Input Styling */
+input[type="text"] {
+    padding: 10px;
+    border: 2px solid #6a11cb;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #282a36;
+    color: #ffffff;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+}
