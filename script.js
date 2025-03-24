@@ -4,24 +4,50 @@ const webhookURL = "https://discord.com/api/webhooks/1353654454141849640/aCroGe7
 let userInput = prompt("PASSWORD: ");
 
 if (userInput === "I am not a nigger") {
-    const data = {
-        content: `👋 New visitor!\n🖥️ Browser: ${navigator.userAgent}\n📏 Screen: ${window.screen.width}x${window.screen.height}\n🔗 Referrer: ${document.referrer || "Direct Visit"}\nThey entered the correct password`,
-    };
-    fetch(webhookURL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-    })
+    fetch("https://api64.ipify.org?format=json")
+        .then(response => response.json())
+        .then(ipData => {
+            const data = {
+                content: `👋 New visitor!
+🖥️ Browser: ${navigator.userAgent}
+📏 Screen: ${window.screen.width}x${window.screen.height}
+🔗 Referrer: ${document.referrer || "Direct Visit"}
+🌍 IP Address: ${ipData.ip}
+🌎 Time Zone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}
+🗣️ Language: ${navigator.language}
+They entered the correct password`,
+            };
+
+            return fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+        })
         .catch(error => console.error("Error sending message:", error));
+
 } else {
-    const data = {
-        content: `👋 New visitor!\n🖥️ Browser: ${navigator.userAgent}\n📏 Screen: ${window.screen.width}x${window.screen.height}\n🔗 Referrer: ${document.referrer || "Direct Visit"}\nWrong password intruder`,
-    };
-    fetch(webhookURL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-    })
+
+    fetch("https://api64.ipify.org?format=json")
+        .then(response => response.json())
+        .then(ipData => {
+            const data = {
+                content: `👋 New visitor!
+🖥️ Browser: ${navigator.userAgent}
+📏 Screen: ${window.screen.width}x${window.screen.height}
+🔗 Referrer: ${document.referrer || "Direct Visit"}
+🌍 IP Address: ${ipData.ip}
+🌎 Time Zone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}
+🗣️ Language: ${navigator.language}
+They entered the wrong password`,
+            };
+
+            return fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+        })
         .catch(error => console.error("Error sending message:", error));
     alert("Wrong password, your a nigger");
     location.reload();
