@@ -1,0 +1,24 @@
+* {
+  transition: 0.4s;
+}
+
+#container {
+  padding: 20px;
+}
+
+/* Buttons */
+.launch-btn {
+  background: black;
+  /* Purple button */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.launch-btn:hover {
+  background: #8e44ad;
+}
